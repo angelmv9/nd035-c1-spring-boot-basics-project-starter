@@ -1,15 +1,17 @@
 package com.udacity.jwdnd.course1.cloudstorage.model;
 
 // Stores data from CREDENTIALS table. Simple POJO.
+
+// functionality similar to LastPass: stores url, username, password
 public class CredentialsORM {
    private Integer credentialId;
    private String url;
    private String username;
-   private String key;
+   private String key; //salt
    private String password;
 
    // Foreign Key points to USERS
-   private Integer userid;
+   private Integer userId;
 
    public CredentialsORM(Integer credentialId, String url, String username,
                          String key, String password, Integer userid) {
@@ -18,7 +20,7 @@ public class CredentialsORM {
       this.username = username;
       this.key = key;
       this.password = password;
-      this.userid = userid;
+      this.userId = userid;
    }
 
    public Integer getCredentialId() {
@@ -61,11 +63,11 @@ public class CredentialsORM {
       this.password = password;
    }
 
-   public Integer getUserid() {
-      return userid;
+   public Integer getUserId() {
+      return userId;
    }
 
-   public void setUserid(Integer userid) {
-      this.userid = userid;
+   public void setUserId(Integer userId) {
+      this.userId = userId;
    }
 }
