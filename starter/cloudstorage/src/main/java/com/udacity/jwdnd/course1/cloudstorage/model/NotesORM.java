@@ -7,10 +7,10 @@ public class NotesORM {
    private String noteDescription;
 
    // Foreign Key points to USERS
-   private UsersORM userId;
+   private Integer userId;
 
    public NotesORM(Integer noteId, String noteTitle, String noteDescription,
-                   UsersORM userId) {
+                   Integer userId) {
       this.noteId = noteId;
       this.noteTitle = noteTitle;
       this.noteDescription = noteDescription;
@@ -41,11 +41,11 @@ public class NotesORM {
       this.noteDescription = noteDescription;
    }
 
-   public UsersORM getUserId() {
+   public Integer getUserId() {
       return userId;
    }
 
-   public void setUserId(UsersORM userId) {
+   public void setUserId(Integer userId) {
       this.userId = userId;
    }
 }

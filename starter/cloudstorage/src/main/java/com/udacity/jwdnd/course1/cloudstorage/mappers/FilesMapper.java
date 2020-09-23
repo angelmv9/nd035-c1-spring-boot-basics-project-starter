@@ -9,13 +9,13 @@ public interface FilesMapper {
    @Select("SELECT * FROM FILES")
    FilesORM getFile();
 
-   @Insert("INSERT INTO FILES (fileid,filename,contenttype,filesize,filedata," +
+   @Insert("INSERT INTO FILES (fileId,filename,contenttype,filesize,filedata," +
            "userid) VALUES (#{fileId},#{filename},#{contentType},#{fileSize}," +
            "#{fileData},#{userId})")
-   @Options(useGeneratedKeys = true, keyProperty = "fileid")
+   @Options(useGeneratedKeys = true, keyProperty = "fileId")
    int uploadFile(FilesORM file);
 
-   @Delete("DELETE FROM FILES WHERE fileid = #{fileId}")
+   @Delete("DELETE FROM FILES WHERE fileId = #{fileId}")
    int removeFile(int fileId);
 
 

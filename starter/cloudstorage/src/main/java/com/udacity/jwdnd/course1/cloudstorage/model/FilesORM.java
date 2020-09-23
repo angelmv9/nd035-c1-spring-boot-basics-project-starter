@@ -1,6 +1,6 @@
 package com.udacity.jwdnd.course1.cloudstorage.model;
 
-import java.sql.Blob;
+import java.io.InputStream;
 
 // Stores data from FILES table. Simple POJO.
 public class FilesORM {
@@ -10,13 +10,13 @@ public class FilesORM {
    private String fileSize;
 
    // Blob or InputStream ?
-   private Blob fileData;
+   private InputStream fileData;
 
    // Foreign Key points to USERS
-   private String userId;
+   private Integer userId;
 
    public FilesORM(Integer fileId, String filename, String contentType,
-                   String fileSize, Blob fileData, String userId) {
+                   String fileSize, InputStream fileData, Integer userId) {
       this.fileId = fileId;
       this.filename = filename;
       this.contentType = contentType;
@@ -57,19 +57,19 @@ public class FilesORM {
       this.fileSize = fileSize;
    }
 
-   public Blob getFileData() {
+   public InputStream getFileData() {
       return fileData;
    }
 
-   public void setFileData(Blob fileData) {
+   public void setFileData(InputStream fileData) {
       this.fileData = fileData;
    }
 
-   public String getUserId() {
+   public Integer getUserId() {
       return userId;
    }
 
-   public void setUserId(String userId) {
+   public void setUserId(Integer userId) {
       this.userId = userId;
    }
 }
